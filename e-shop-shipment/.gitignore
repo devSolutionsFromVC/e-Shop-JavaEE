@@ -1,0 +1,14 @@
+.idea/*
+target/
+*.class
+*.iml
+hs_err_pid*
+*.jar
+*.war
+*.ear
+*.xhtml
+*.html
+*.xml
+*.css
+*.js
+
