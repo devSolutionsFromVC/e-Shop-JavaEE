@@ -5,9 +5,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name = "CATEGORY")
 @NamedQueries({
@@ -17,11 +15,9 @@ import java.util.List;
         @NamedQuery(name = "Category.findByTags", query = "SELECT c FROM Category c WHERE c.tags = :tags")})
 public class Category implements Serializable{
 
-    private static final long serialVersionUID = -5400424750505982222L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
 

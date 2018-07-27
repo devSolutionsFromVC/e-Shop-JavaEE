@@ -6,9 +6,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 import java.util.List;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name = "GROUPS")
 @NamedQueries({
@@ -18,11 +16,9 @@ import java.util.List;
         @NamedQuery(name = "Groups.findByDescription", query = "SELECT g FROM Groups g WHERE g.description = :description")})
 public class Groups {
 
-    private static final long serialVersionUID = 1205082528194257031L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
 

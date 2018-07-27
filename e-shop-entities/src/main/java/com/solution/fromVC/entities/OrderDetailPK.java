@@ -5,13 +5,10 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-/**
- * Created by Влад on 10.11.2016.
- */
+
 @Embeddable
 public class OrderDetailPK implements Serializable{
 
-    private static final long serialVersionUID = -1381453765352891148L;
 
     @Basic(optional = false)
     @Column(name = "ORDER_ID")

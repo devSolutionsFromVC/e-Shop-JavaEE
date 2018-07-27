@@ -7,9 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name = "CUSTOMER_ORDER")
 @NamedQueries({
@@ -23,7 +21,6 @@ import java.util.List;
 @XmlRootElement(name = "CustomerOrder")
 public class CustomerOrder implements Serializable{
 
-    private static final long serialVersionUID = 2705492120685275910L;
 
     @Basic(optional = false)
     @NotNull
@@ -33,7 +30,6 @@ public class CustomerOrder implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
 

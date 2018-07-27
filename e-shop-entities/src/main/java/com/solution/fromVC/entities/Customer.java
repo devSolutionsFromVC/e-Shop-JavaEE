@@ -5,9 +5,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @NamedQueries({
         @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c"),
@@ -19,7 +17,6 @@ import java.util.List;
         @NamedQuery(name = "Customer.findByCity", query = "SELECT c FROM Customer c WHERE c.city = :city")})
 public class Customer extends Person{
 
-    private static final long serialVersionUID = -1964261708710396652L;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private List<CustomerOrder> customerOrderList;

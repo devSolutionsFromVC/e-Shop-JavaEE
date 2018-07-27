@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name="PERSON")
 @NamedQueries({
@@ -24,18 +22,16 @@ import java.util.List;
 })
 public class Person implements Serializable{
 
-    private static final long serialVersionUID = 6253057722726297688L;
 
     @JoinTable(name = "PERSON_GROUPS", joinColumns = {
         @JoinColumn(name = "PERSON_EMAIL", referencedColumnName = "EMAIL")}, inverseJoinColumns = {
         @JoinColumn(name = "GROUPS_NAME", referencedColumnName = "NAME")})
     @ManyToMany
-    protected List<Groups> groupsList;
+    List<Groups> groupsList;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    @Basic(optional = false)
     protected Integer id;
 
     @Column(name = "FIRSTNAME")
@@ -166,10 +162,7 @@ public class Person implements Serializable{
             return false;
         }
         Person other = (Person) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override

@@ -4,9 +4,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 
-/**
- * Created by Влад on 10.11.2016.
- */
+
 @Entity
 @Table(name = "ORDER_DETAIL")
 @NamedQueries({
@@ -16,7 +14,6 @@ import java.io.Serializable;
         @NamedQuery(name = "OrderDetail.findByQty", query = "SELECT o FROM OrderDetail o WHERE o.qty = :qty")})
 public class OrderDetail implements Serializable{
 
-    private static final long serialVersionUID = 5604812482204021100L;
 
     @EmbeddedId
     protected OrderDetailPK orderDetailPK;

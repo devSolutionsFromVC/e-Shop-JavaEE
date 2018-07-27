@@ -6,9 +6,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name = "ORDER_STATUS")
 @NamedQueries({
@@ -17,11 +15,9 @@ import java.util.List;
         @NamedQuery(name = "OrderStatus.findByStatus", query = "SELECT o FROM OrderStatus o WHERE o.status = :status")})
 public class OrderStatus implements Serializable{
 
-    private static final long serialVersionUID = 232654980834071737L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
 

@@ -6,9 +6,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 @Table(name = "PRODUCT")
 @NamedQueries({
@@ -20,12 +18,10 @@ import java.io.Serializable;
         @NamedQuery(name = "Product.findByImg", query = "SELECT p FROM Product p WHERE p.img = :img")})
 public class Product implements Serializable{
 
-    private static final long serialVersionUID = -9109112921000514199L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    @Basic(optional = false)
     private Integer id;
 
     @Column(name = "NAME", nullable = false, length = 45)

@@ -3,13 +3,10 @@ package com.solution.fromVC.entities;
 import javax.persistence.Entity;
 import java.util.ArrayList;
 
-/**
- * Created by Влад on 09.11.2016.
- */
+
 @Entity
 public class Administrator extends Person{
 
-    private static final long serialVersionUID = 7261229187771153310L;
 
     public Administrator(){
         this.groupsList =  new ArrayList<Groups>();
@@ -28,10 +25,7 @@ public class Administrator extends Person{
             return false;
         }
         Administrator other = (Administrator) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
